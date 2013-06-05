@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+<title>{$title}</title>
+<link rel="stylesheet" href="{CSS_PATH}html5-reset.css" media="all" />
+<!--[if !IE 6]><!-->
+<link rel="stylesheet" href="{CSS_PATH}base.css" media="all" />
+<!--<![endif]-->
+<!--[if (gt IE 6) & (lt IE 9)]><link rel="stylesheet" href="{CSS_PATH}ie.css" media="all" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="http://universal-ie6-css.googlecode.com/files/ie6.1.0.css" media="screen, projection" /><![endif]-->
+</head>
+
+<body>
+<header id="header" role="banner"> <a class="hgroup" href="/">
+  <div>
+    <hgroup>
+      <h1>{$h1}</h1>
+      <h2>{$welcome}</h2>
+    </hgroup>
+  </div>
+  </a> </header>
+<div id="content" role="main">
+  <div class="reviews">
+    <article class="rated-0"> <a rel="bookmark" title="Function list" href="/">
+      <h2>Function list</h2>
+      <!--<meter min="0" max="1000" low="0" high="1" optimum="100" value="{$function_total}">{$function_total}</meter>-->
+      <div class="meter">{$function_total}</div>
+      <p>{loop $function_list $val} {$val}<br>
+        {/loop}</p>
+      <footer class="info">不包含系统内置函数</footer>
+      </a> </article>
+    <article class="rated-0"> <a rel="bookmark" title="Class list" href="/">
+      <h2>Class list</h2>
+      <!--<meter min="0" max="1000" low="0" high="1" optimum="100" value="{$class_total}">{$class_total}</meter>-->
+      <div class="meter">{$class_total}</div>
+      <p>{loop $class_list $val} {$val}<br>
+        {/loop}</p>
+      <footer class="info">不包含系统类</footer>
+      </a> </article>
+    <article class="rated-0"> <a rel="bookmark" title="Defined constants list" href="/">
+      <h2>Defined constants list</h2>
+      <!--<meter min="0" max="5000" low="0" high="1" optimum="100" value="{$defined_total}">{$defined_total}</meter>-->
+      <div class="meter">{$defined_total}</div>
+      <p>{loop $defined_list $key $val} {$key}<br>
+        {/loop}</p>
+      <footer class="info">不包含系统常量</footer>
+      </a> </article>
+    <article class="rated-0"> <a rel="bookmark" title="Load file list" href="/">
+      <h2>File list</h2>
+      <!--<meter min="0" max="5000" low="0" high="1" optimum="100" value="{$file_total}">{$file_total}</meter>-->
+      <div class="meter">{$file_total}</div>
+      <p>{loop $file_list $key $val} {str_replace(ROOT_PATH,'',str_replace("\\", '/',$val))}<br>
+        {/loop}</p>
+      <footer class="info"></footer>
+      </a> </article>
+    <article class="rated-0"> <a rel="bookmark" title="Var list" href="/">
+      <h2>Var list</h2>
+      <!--<meter min="0" max="1000" low="0" high="1" optimum="100" value="{$var_total}">{$var_total}</meter>-->
+      <div class="meter">{$var_total}</div>
+      <p>{loop $var_list $key $val} {$key}<br>
+        {/loop}</p>
+      <footer class="info"></footer>
+      </a> </article>
+    <article class="rated-1"> <a rel="bookmark" title="System info" href="/">
+      <h2>System info</h2>
+      <p>{$app_info}<br>
+        Run Time:{php $end_time = microtime();$run_time = $end_time - SYS_START_TIME; echo $run_time}</p>
+      <footer class="info">{$powered_by}</footer>
+      </a> </article>
+  </div>
+</div>
+<footer id="site" role="contentinfo">
+  <p>Powered by <a href="/">Anframewrok</a> {ANF_VERSION} <a rel="self" class="btt" href="#top">Back to top</a></p>
+</footer>
+</body>
+</html>

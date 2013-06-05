@@ -1,0 +1,159 @@
+/* @font-face
+------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+@font-face { font-family:'Graublau Web'; src: local('Graublau Web'), local('GraublauWeb-Regular'), url('/fonts/GraublauWeb.otf') format('opentype'); }
+@font-face { font-family:'Graublau Web'; font-weight:bold; src: local('Graublau Web'), local('GraublauWeb-Bold'), url('/fonts/GraublauWebBold.otf') format('opentype'); }
+
+
+/* Basic Layout
+------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+html { background-color:#4E575B; height:100%; min-width:960px; }
+body { min-height:100%; }
+body.grid {  }
+#skip { position:absolute; left:-99999em; height:0; }
+header, #content, footer { width:940px; margin:0 auto; }
+header { padding-top:10px; margin-bottom:70px; position:relative; }
+footer { clear:both; padding:40px 0 10px 0; text-align:right; }
+
+
+/* Typography
+------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+body { color:rgb(250,250,250); text-shadow:1px 1px 1px rgba(0,0,0,0.9); font-size:15px; font-family:Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, Tahoma, Helvetica, Arial, sans-serif; -webkit-font-smoothing:antialiased; }
+h1, h2, h3, h4, h5, h6 { font-weight:normal; }
+h1, h1 a, h2, h2 a, h3, meter { font-family:"Graublau Web", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Verdana, "Bitstream Vera Sans", Arial, sans-serif; }
+h1 { font-size:60px; line-height:1; font-weight:bold; }
+h2 { font-size:22px; padding-bottom:10px; letter-spacing:-1px; line-height:1.1; }
+p { line-height:1.3; padding-bottom:1.3em; }
+header h1:hover { color:rgba(255,255,255,0.9); }
+header h2 { padding-left:60px; margin-bottom:20px; margin-top:-4px; letter-spacing:1px; } 
+footer { color:rgb(50,50,50); text-shadow:1px 1px 1px rgba(255,255,255,0.6); }
+
+/* Links
+------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+a { text-decoration:none; color:rgb(50,50,50); color:rgb(250,250,250); overflow:hidden; }
+a p, a time { color:rgb(250,250,250); }
+footer a { text-shadow:1px 1px 1px rgba(0,0,0,0.8); }
+footer a.btt { margin-left:20px; }
+footer a.btt:after { content:"\2191" }
+
+
+/* Review List
+------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+.reviews article { background-color:rgba(0,0,0,0.75); position:relative; border-radius:4px; -webkit-border-radius:4px; -moz-border-radius:4px; }
+.reviews article:hover { z-index:100; }
+.reviews article:nth-child(5n+1) { margin-left:60px; width:580px; margin-top:-10px; }
+.reviews article:nth-child(5n+2) { margin-left:420px; width:480px; margin-top:-30px; }
+.reviews article:nth-child(5n+3) { margin-left:120px; width:640px; margin-top:-20px; }
+.reviews article:nth-child(5n+4) { margin-left:480px; width:360px; margin-top:-20px; }
+.reviews article:nth-child(5n+5) { margin-left:180px; width:360px; margin-top:-30px; }
+.reviews article a { display:block; height:100%; padding:20px; }
+.reviews article:nth-child(5n+2) a { padding-top:40px; }
+.reviews article:nth-child(5n+3) a { padding-top:30px; }
+.reviews article:nth-child(5n+5) a { padding:40px 30px 10px 60px; }
+.reviews article meter, .reviews article .meter, header #rated a { font-size:80px; text-align:center; padding:8px 10px 12px 10px; display:block; width:1.3em; height:1em; position:absolute; }
+.reviews article:nth-child(5n+1) meter, .reviews article:nth-child(5n+1) .meter { top:-45px; left:540px; }
+.reviews article:nth-child(5n+2) meter, .reviews article:nth-child(5n+2) .meter { top:-50px; left:420px; }
+.reviews article:nth-child(5n+3) meter, .reviews article:nth-child(5n+3) .meter { left:-20px; bottom:-50px; }
+.reviews article:nth-child(5n+4) meter, .reviews article:nth-child(5n+4) .meter { left:320px; top:-40px; }
+.reviews article:nth-child(5n+5) meter, .reviews article:nth-child(5n+5) .meter { left:-60px; top:20px; }
+.reviews article:nth-child(5n+1) h2 { padding-right:60px; }
+.reviews article:nth-child(5n+2) h2 { padding-right:80px; }
+.reviews article.rated-1 { background-color:rgba(0,0,0,0.75); }
+.reviews article.rated-1 meter, .reviews article.rated-1 .meter, header #rated .rated-1 { background-color:rgba(102,213,114,0.80); border-radius:0.6em; -webkit-border-radius:0.6em; -moz-border-radius:0.6em; -webkit-transition-property:background-color; -webkit-transition-duration:0.2s; -webkit-transition-timing-function:ease-in-out; }
+.reviews article.rated-0 meter, .reviews article.rated-0 .meter, header #rated .rated-0 { background-color:rgba(255,77,77,0.6); color:rgb(250,250,250); }
+.reviews article.rated-0 { opacity:0.40; -webkit-transition-property:opacity; -webkit-transition-duration:0.25s; -webkit-transition-timing-function:ease-in-out; }
+.reviews article.rated-0:hover { opacity:1; }
+.reviews article.rated-1, .reviews article.rated-0:hover { box-shadow:2px 2px 4px rgba(0,0,0,0.6); -webkit-box-shadow:2px 2px 4px rgba(0,0,0,0.6); -moz-box-shadow:2px 2px 4px rgba(0,0,0,0.6); }
+.reviews article.rated-1:hover meter, .reviews article.rated-1:hover .meter, header #rated .rated-1 { background-color:rgba(102,213,114,0.95); }
+.reviews article footer { width:100%; padding:0 0 1.3em 0; text-align:right; font-size:13px; color:rgba(250,250,250,0.8); clear:both; text-shadow:1px 1px 1px rgba(0,0,0,0.9); }
+.reviews article.rated-1:nth-child(5n+1) meter, .reviews article.rated-1:nth-child(5n+1) .meter { -moz-transform: rotate(4deg); }
+.reviews article.rated-1:nth-child(5n+2) meter, .reviews article.rated-1:nth-child(5n+2) .meter { -moz-transform: rotate(6deg); }
+.reviews article.rated-1:nth-child(5n+3) meter, .reviews article.rated-1:nth-child(5n+3) .meter { -moz-transform: rotate(-9deg); }
+.reviews article.rated-1:nth-child(5n+4) meter, .reviews article.rated-1:nth-child(5n+4) .meter { -moz-transform: rotate(5deg); }
+.reviews article.rated-1:nth-child(5n+5) meter, .reviews article.rated-1:nth-child(5n+5) .meter { -moz-transform: rotate(-3deg); }
+
+
+
+/* Individual Review
+------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+body.review article { padding:40px 100px 40px 40px; margin-right:60px; position:relative; background-color:rgba(0,0,0,0.65); border-radius:10px; -webkit-border-radius:10px; -moz-border-radius:10px; }
+body.review article h1 { padding:0 160px 0 0; font-size:40px; }
+body.review article meter, body.review article .meter { font-size:120px; position:absolute; right:20px; top:-60px; text-align:center; display:block; width:1em; padding:20px; box-shadow:1px 1px 2px rgba(0,0,0,0.4); -webkit-box-shadow:1px 1px 2px rgba(0,0,0,0.4); -moz-box-shadow:1px 1px 2px rgba(0,0,0,0.4); }
+body.review article.rated-1 meter, body.review article.rated-1 .meter { background-color:rgba(102,213,114,0.85); border-radius:0.7em; -webkit-border-radius:0.7em; -moz-border-radius:0.7em; }
+body.review article.rated-0 meter, body.review article.rated-0 .meter { background-color:rgba(255,77,77,0.6); }
+body.review article p { font-size:20px; padding:40px; }
+body.review article footer { padding:0; width:460px; margin-right:-160px; }
+body.review article p.info { font-size:20px; color:rgb(50,50,50,0.8); padding:0; margin-top:10px; }
+body.review article p.info a { display:block; color:rgb(50,50,50); padding:10px 60px 10px 20px; background-color:rgba(255,255,255,0.8); text-shadow:1px 1px 1px rgba(255,255,255,0.9); }
+body.review article p.info a:hover { background-color:rgba(255,255,255,0.95); }
+body.review article p.info a time { color:rgb(50,50,50); }
+body.review .movie-info { display:none; }
+
+
+
+@media handheld, screen and (max-width:1100px) {
+	html { min-width:100%; }
+	header h1 { font-size:52px; }
+	header, #content, footer { width:100%; }
+}
+
+
+/* iPhone and Handheld
+------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+@media handheld, screen and (max-width:780px) {
+	html { min-width:100%; }
+    body { -webkit-text-stroke:0 rgb(0,0,0); font-family:Helvetica, Arial, Verdana, sans-serif; font-size:17px; background:transparent url('/images/iphone_bg.png') repeat top left; }
+	header, #content, footer { width:100%; }
+	header { padding-top:5px; margin-bottom:45px; }
+	footer { font-size:13px; text-align:center; padding:20px 0 10px 0; }
+	header h1 { font-size:27px; text-align:center; }
+	header h2 { font-size:16px; text-align:center; padding:10px 0 2px 0; }
+	#content .reviews article { width:98%; margin:20px auto; padding:0; }
+	#content .reviews article meter, #content .reviews article .meter { left:auto; right:0; top:-30px; bottom:auto; font-size:70px; padding:6px 8px 10px 8px; }
+	#content .reviews article a { padding:20px; }
+	#content .reviews article h2 { padding-right:100px; font-size:23px; padding-bottom:16px;  }
+	#content .reviews article footer { width:100%; }
+	body.review #content h1 { font-size:24px; }
+	body.review #content article { width:98%; margin:0 auto; padding:0; border-radius:4px; -webkit-border-radius:4px; -moz-border-radius:4px; }
+	body.review #content article h1 { font-size:22px; background-color:transparent; padding:10px 60px 10px 10px; margin:0; }
+	body.review #content article meter, body.review #content article .meter { font-size:70px; position:absolute; left:auto; right:0; top:-18px; width:auto; padding:3px 10px; }
+	body.review #content article p { font-size:17px; padding:10px; }
+	body.review #content article footer { width:98%; margin:0 auto; }
+	body.review #content article p.info { font-size:15px; }
+	body.review #content article p.info a { padding:10px; }
+	header form { position:relative; top:0; right:0; height:50px; z-index:100; }
+	header form input { position:absolute; left:10%; width:65%; padding:8px 50px 8px 10px; }
+	header form button { position:absolute; left:auto; right:5%; margin-top:-10px; }
+	.no-results article h1 { margin-top:-24px; font-size:26px; }
+	.no-results article { width:90%; margin:0 5%; }
+	.no-results article p { padding:0 0 1.4em 0; margin:0; }
+	.search-count { text-align:center; width:100%; margin-left:0; margin-right:0; margin-top:-15px; }
+	nav.pagination { font-size:17px; }
+}
+
+
+/* iPhone Portrait
+------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+@media screen and (max-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+	header h1 { font-size:27px; letter-spacing:0; }
+	header form { top:18px; }
+	header form button { right:5%; }
+	.feed { left:4px; top:40px; }
+}
+
+
+/* iPhone Landscape
+------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+@media screen and (min-width:321px) and (max-width:480px) { 
+	header h1 { font-size:34px; }
+	body.review #content  article h1 { padding-right:100px; padding-left:20px; }
+	body.review #content article { width:94%; padding:10px 0; }
+	body.review #content article p { padding:10px 20px; }
+}
+
+
+
+
+
+
+
+
